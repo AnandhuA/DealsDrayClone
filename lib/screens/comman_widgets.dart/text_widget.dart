@@ -4,24 +4,23 @@ class TextWidget extends StatelessWidget {
   final String title;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final EdgeInsetsGeometry? margin;
   const TextWidget({
     super.key,
     required this.title,
     this.fontSize,
-    this.fontWeight ,
+    this.fontWeight,
+    this.margin,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 50),
+      margin: margin,
       width: double.infinity,
       child: Text(
         title,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: fontWeight
-        ),
+        style: TextStyle(fontSize: fontSize, fontWeight: fontWeight),
       ),
     );
   }

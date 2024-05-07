@@ -12,51 +12,58 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset("assets/images/dealsdray-online.webp"),
-              Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade400,
-                  borderRadius: BorderRadius.circular(30),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/dealsdray-online.webp"),
+                Container(
+                  width: 200,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TabBarWidget(
+                        title: "Phone",
+                        color: Colors.red,
+                        selectedTextColor: Colors.white,
+                      ),
+                      TabBarWidget(
+                        title: "Email",
+                      ),
+                    ],
+                  ),
                 ),
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    TabBarWidget(
-                      title: "Phone",
-                      color: Colors.red,
-                      selectedTextColor: Colors.white,
-                    ),
-                    TabBarWidget(
-                      title: "Email",
-                    ),
-                  ],
+                const SizedBox(height: 30),
+                const TextWidget(
+                  title: "Glad to see you!",
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold,
+                  margin: EdgeInsets.symmetric(horizontal: 50),
                 ),
-              ),
-              const SizedBox(height: 30),
-              const TextWidget(
-                title: "Glad to see you!",
-                fontSize: 23,
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 20),
-              const TextWidget(title: "Please provided Your Phone Number"),
-              const TextFieldWidget(
-                margin: EdgeInsets.all(50),
-                maxLength: 10,
-                lable: "Phone",
-              ),
-              ButtonWidget(
-                ontap: () => ontap(context),
-              )
-            ],
+                const SizedBox(height: 20),
+                const TextWidget(
+                  title: "Please provided Your Phone Number",
+                  margin: EdgeInsets.symmetric(horizontal: 50),
+                ),
+                const TextFieldWidget(
+                  margin: EdgeInsets.all(50),
+                  maxLength: 10,
+                  lable: "Phone",
+                  keyboardType: TextInputType.phone,
+                ),
+                ButtonWidget(
+                  ontap: () => ontap(context),
+                )
+              ],
+            ),
           ),
         ),
       ),
