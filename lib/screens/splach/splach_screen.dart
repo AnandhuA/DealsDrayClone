@@ -18,7 +18,7 @@ class _SplachScreenState extends State<SplachScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginScreen(),
+            builder: (context) => const LoginScreen(),
           ));
     });
   }
@@ -29,22 +29,22 @@ class _SplachScreenState extends State<SplachScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/410x272-FEAT-hompage-ARIA-sponsored.jpg",
-                ),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
+          // Container(
+          //   decoration: const BoxDecoration(
+          //     image: DecorationImage(
+          //       image: AssetImage(
+          //         "assets/images/410x272-FEAT-hompage-ARIA-sponsored.jpg",
+          //       ),
+          //       fit: BoxFit.fill,
+          //     ),
+          //   ),
+          // ),
           Positioned(
             bottom: 0,
             child: Container(
               height: size.height * 0.3,
               width: size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(100),

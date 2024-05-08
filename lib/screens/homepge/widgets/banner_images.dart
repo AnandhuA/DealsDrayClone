@@ -16,7 +16,7 @@ class BannerImagesWidget extends StatelessWidget {
           ),
           options: CarouselOptions(
             autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 1),
+            autoPlayInterval: const Duration(seconds: 5),
           ),
         ));
   }

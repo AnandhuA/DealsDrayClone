@@ -2,9 +2,8 @@ import 'package:deals_dray_clone/screens/login/widgets/button.dart';
 import 'package:deals_dray_clone/screens/login/widgets/tab_bar_widget.dart';
 import 'package:deals_dray_clone/screens/comman_widgets.dart/text_field_widget.dart';
 import 'package:deals_dray_clone/screens/comman_widgets.dart/text_widget.dart';
-import 'package:deals_dray_clone/screens/registration/registration_screen.dart';
+import 'package:deals_dray_clone/screens/otp/otp_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -74,7 +73,7 @@ class LoginScreen extends StatelessWidget {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const RegistrationScreen(),
+          builder: (context) => const OtpScreen(),
         ));
   }
 }
