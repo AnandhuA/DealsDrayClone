@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:deals_dray_clone/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +46,7 @@ class _SplachScreenState extends State<SplachScreen> {
               height: size.height * 0.3,
               width: size.width,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: whiteColor,
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(100),
                 ),

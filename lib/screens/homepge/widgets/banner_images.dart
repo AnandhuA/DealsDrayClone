@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,8 @@ class BannerImagesWidget extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: CarouselSlider(
           items: List.generate(
-            colors.length,
-            (index) => banner(color: colors[index]),
+            bannerImagesList.length,
+            (index) => banner(imgUrl: bannerImagesList[index]),
           ),
           options: CarouselOptions(
             autoPlay: true,
@@ -21,31 +22,42 @@ class BannerImagesWidget extends StatelessWidget {
         ));
   }
 
-  Widget banner({required Color color}) {
+  Widget banner({required String imgUrl}) {
     return Container(
       width: 350,
       height: 200,
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: color,
         borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: CachedNetworkImageProvider(
+            imgUrl,
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
+      // child: CachedNetworkImage(
+      //   placeholder: (context, url) => Center(
+      //     child: CircularProgressIndicator(
+      //       color: redColor,
+      //     ),
+      //   ),
+      //   errorWidget: (context, url, error) => const Icon(
+      //     Icons.error,
+      //     color: greyColor,
+      //     size: 30,
+      //   ),
+      //   imageUrl: imgUrl,
+      //   fit: BoxFit.cover,
+      // ),
     );
   }
 }
 
-List<Color> colors = [
-  Colors.red.shade100,
-  Colors.blue.shade100,
-  Colors.green.shade100,
-  Colors.yellow.shade100,
-  Colors.orange.shade100,
-  Colors.purple.shade100,
-  Colors.teal.shade100,
-  Colors.pink.shade100,
-  Colors.indigo.shade100,
-  Colors.deepPurple.shade100,
-  Colors.cyan.shade100,
-  Colors.amber.shade100,
-  Colors.lime.shade100,
+List<String> bannerImagesList = [
+  "https://img.freepik.com/premium-psd/horizontal-website-banne_451189-110.jpg",
+  "https://i.pinimg.com/originals/ca/e7/2c/cae72ce86998abcadd5051acd91a696b.jpg",
+  "https://i.pinimg.com/originals/74/e5/62/74e562795e6ac1e3fee61307e09c3040.jpg",
+  "https://www.kindpng.com/picc/m/109-1097440_latest-mobile-banner-png-transparent-png.png",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFGi2P4f-udTJKagFxza5bv_3Hp8PHvNNnF6AdeGcFA&s"
 ];

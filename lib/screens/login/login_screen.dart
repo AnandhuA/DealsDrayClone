@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:deals_dray_clone/screens/login/widgets/button.dart';
 import 'package:deals_dray_clone/screens/login/widgets/tab_bar_widget.dart';
 import 'package:deals_dray_clone/screens/comman_widgets.dart/text_field_widget.dart';
@@ -23,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                   width: 200,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
+                    color: greyColor400,
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: const Row(
@@ -31,8 +32,8 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       TabBarWidget(
                         title: "Phone",
-                        color: Colors.red,
-                        selectedTextColor: Colors.white,
+                        color: redColor,
+                        selectedTextColor: whiteColor,
                       ),
                       TabBarWidget(
                         title: "Email",
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const OtpScreen(),
+          builder: (context) => OtpScreen(),
         ));
   }
 }

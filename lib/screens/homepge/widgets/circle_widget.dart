@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class CircleWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class CircleWidget extends StatelessWidget {
           radius: 40,
           child: Icon(
             icon,
-            color: Colors.white,
+            color: whiteColor,
             size: 30,
           ),
         ),

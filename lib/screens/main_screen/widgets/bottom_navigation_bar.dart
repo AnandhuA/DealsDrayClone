@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 ValueNotifier<int> indexNotifier = ValueNotifier(0);
@@ -17,8 +18,8 @@ class BottomNavigationWidget extends StatelessWidget {
             indexNotifier.value = index;
           },
           type: BottomNavigationBarType.fixed,
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: Colors.red,
+          unselectedItemColor: greyColor,
+          selectedItemColor: redColor,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),

@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -27,7 +28,7 @@ class SearchWidget extends StatelessWidget {
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(10),
         ),
-        fillColor: Colors.grey[200],
+        fillColor: greyColor200,
         filled: true,
       ),
     );

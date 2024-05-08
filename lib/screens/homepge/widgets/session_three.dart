@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:deals_dray_clone/screens/homepge/widgets/circle_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -15,22 +16,22 @@ class SessionThree extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CircleWidget(
-            color: Colors.blue.shade300,
+            color: blueColor300,
             icon: Icons.phone_android_outlined,
             title: "Mobile",
           ),
           CircleWidget(
-            color: Colors.green.shade300,
+            color: greenColor300,
             icon: Icons.laptop_chromebook,
             title: "Laptop",
           ),
           CircleWidget(
-            color: Colors.pink.shade300,
+            color: pinkColor300,
             icon: Icons.camera_alt,
             title: "Camera",
           ),
           CircleWidget(
-            color: Colors.orange.shade400,
+            color: orangeColor300,
             icon: Icons.lightbulb_outline_rounded,
             title: "LED",
           )

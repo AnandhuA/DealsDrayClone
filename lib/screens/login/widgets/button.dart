@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
@@ -13,14 +14,14 @@ class ButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => ontap(),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red,
+          backgroundColor: redColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
         ),
         child: const Text(
           "SEND CODE",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: whiteColor),
         ),
       ),
     );

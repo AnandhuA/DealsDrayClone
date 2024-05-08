@@ -1,6 +1,7 @@
 
 
 
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class FloatingButtonWidget extends StatelessWidget {
@@ -14,16 +15,16 @@ class FloatingButtonWidget extends StatelessWidget {
       height: 50,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red,
+          backgroundColor: redColor,
         ),
         onPressed: () {},
         icon: const Icon(
           Icons.message_outlined,
-          color: Colors.white,
+          color: whiteColor,
         ),
         label: const Text(
           "Chat",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: whiteColor),
         ),
       ),
     );

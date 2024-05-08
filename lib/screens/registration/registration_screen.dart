@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:deals_dray_clone/screens/comman_widgets.dart/text_field_widget.dart';
 import 'package:deals_dray_clone/screens/comman_widgets.dart/text_widget.dart';
 import 'package:deals_dray_clone/screens/main_screen/main_screen.dart';
@@ -43,7 +44,7 @@ class RegistrationScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
+        backgroundColor: redColor,
         onPressed: () {
           Navigator.push(
               context,
@@ -53,7 +54,7 @@ class RegistrationScreen extends StatelessWidget {
         },
         child: const Icon(
           Icons.arrow_forward,
-          color: Colors.white,
+          color: whiteColor,
         ),
       ),
     );

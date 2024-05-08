@@ -1,3 +1,4 @@
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class TabBarWidget extends StatelessWidget {
@@ -6,8 +7,8 @@ class TabBarWidget extends StatelessWidget {
   final Color selectedTextColor;
   const TabBarWidget({
     super.key,
-    this.color = Colors.transparent,
-    this.selectedTextColor = Colors.black,
+    this.color = transperentColor,
+    this.selectedTextColor = blackColor,
     required this.title,
   });
 
