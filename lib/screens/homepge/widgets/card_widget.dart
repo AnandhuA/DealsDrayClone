@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CardWidget extends StatelessWidget {
   final String imgUrl;
@@ -24,12 +23,20 @@ class CardWidget extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Container(
+              SizedBox(
                 height: 330,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: CachedNetworkImageProvider(imgUrl),
+                child: CachedNetworkImage(
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(
+                      color: redColor,
+                    ),
                   ),
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                    color: greyColor,
+                    size: 30,
+                  ),
+                  imageUrl: imgUrl,
                 ),
               ),
               Positioned(

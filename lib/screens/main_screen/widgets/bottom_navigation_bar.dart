@@ -34,7 +34,7 @@ class BottomNavigationWidget extends StatelessWidget {
               label: 'Deals',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_basket_outlined),
+              icon: Icon(Icons.shopping_cart),
               label: 'Cart',
             ),
             BottomNavigationBarItem(

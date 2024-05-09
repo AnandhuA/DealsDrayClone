@@ -9,7 +9,7 @@ const greyColor = Colors.grey;
 final greyColor200 = Colors.grey[200];
 final greyColor400 = Colors.grey.shade400;
 
-const transperentColor = Colors.transparent;
+const transparentColor = Colors.transparent;
 
 const blackColor = Colors.black;
 

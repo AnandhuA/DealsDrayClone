@@ -19,7 +19,7 @@ class _SplachScreenState extends State<SplachScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const LoginScreen(),
+            builder: (context) =>  LoginScreen(),
           ));
     });
   }

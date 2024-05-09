@@ -7,7 +7,8 @@ import 'package:deals_dray_clone/screens/otp/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  final ValueNotifier<bool> phone = ValueNotifier(true);
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +28,33 @@ class LoginScreen extends StatelessWidget {
                     color: greyColor400,
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TabBarWidget(
-                        title: "Phone",
-                        color: redColor,
-                        selectedTextColor: whiteColor,
-                      ),
-                      TabBarWidget(
-                        title: "Email",
-                      ),
-                    ],
+                  child: ValueListenableBuilder(
+                    valueListenable: phone,
+                    builder: (context, value, child) {
+                      return Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TabBarWidget(
+                            ontap: () {
+                              phone.value = true;
+                            },
+                            title: "Phone",
+                            color: phone.value ? redColor : transparentColor,
+                            selectedTextColor:
+                                phone.value ? whiteColor : blackColor,
+                          ),
+                          TabBarWidget(
+                            ontap: () {
+                              phone.value = false;
+                            },
+                            color: phone.value ? transparentColor : redColor,
+                            selectedTextColor:
+                                phone.value ? blackColor : whiteColor,
+                            title: "Email",
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -49,15 +65,27 @@ class LoginScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 50),
                 ),
                 const SizedBox(height: 20),
-                const TextWidget(
-                  title: "Please provided Your Phone Number",
-                  margin: EdgeInsets.symmetric(horizontal: 50),
-                ),
-                const TextFieldWidget(
-                  margin: EdgeInsets.all(50),
-                  maxLength: 10,
-                  lable: "Phone",
-                  keyboardType: TextInputType.phone,
+                ValueListenableBuilder(
+                  valueListenable: phone,
+                  builder: (context, value, child) {
+                    return Column(
+                      children: [
+                        TextWidget(
+                          title:
+                              "Please provided Your ${phone.value ? "phone Number" : "email Id"} ",
+                          margin: const EdgeInsets.symmetric(horizontal: 50),
+                        ),
+                        TextFieldWidget(
+                          margin: const EdgeInsets.all(50),
+                          maxLength: phone.value ? 10 : null,
+                          lable: phone.value ? "Phone" : "Email",
+                          keyboardType: phone.value
+                              ? TextInputType.phone
+                              : TextInputType.emailAddress,
+                        ),
+                      ],
+                    );
+                  },
                 ),
                 ButtonWidget(
                   ontap: () => ontap(context),

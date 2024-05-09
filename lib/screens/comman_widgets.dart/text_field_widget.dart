@@ -6,6 +6,7 @@ class TextFieldWidget extends StatelessWidget {
   final int? maxLength;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final Widget?suffixIcon;
   const TextFieldWidget({
     super.key,
     required this.lable,
@@ -13,6 +14,7 @@ class TextFieldWidget extends StatelessWidget {
     this.maxLength,
     this.keyboardType,
     this.obscureText = false,
+    this.suffixIcon
   });
 
   @override
@@ -25,6 +27,7 @@ class TextFieldWidget extends StatelessWidget {
         obscureText: obscureText,
         decoration: InputDecoration(
           label: Text(lable),
+          suffixIcon: suffixIcon
         ),
       ),
     );

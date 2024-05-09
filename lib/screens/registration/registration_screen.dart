@@ -5,7 +5,8 @@ import 'package:deals_dray_clone/screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
-  const RegistrationScreen({super.key});
+  RegistrationScreen({super.key});
+  final ValueNotifier<bool> obscureText = ValueNotifier(true);
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,22 @@ class RegistrationScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 20),
-                const TextFieldWidget(
-                  lable: "Create Password",
-                  obscureText: true,
+                ValueListenableBuilder(
+                  valueListenable: obscureText,
+                  builder: (context, value, child) {
+                    return TextFieldWidget(
+                      lable: "Create Password",
+                      obscureText: obscureText.value,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          obscureText.value = !obscureText.value;
+                        },
+                        icon: obscureText.value
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(height: 20),
                 const TextFieldWidget(lable: "Referral Code (Optional)"),

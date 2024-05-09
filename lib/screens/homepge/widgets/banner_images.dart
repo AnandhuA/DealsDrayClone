@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class BannerImagesWidget extends StatelessWidget {
@@ -24,32 +25,35 @@ class BannerImagesWidget extends StatelessWidget {
 
   Widget banner({required String imgUrl}) {
     return Container(
-      width: 350,
+      width: 400,
       height: 200,
       margin: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
+      // decoration: BoxDecoration(
+      //   // borderRadius: BorderRadius.circular(10),
+      //   // image: DecorationImage(
+      //   //   image: CachedNetworkImageProvider(
+      //   //     imgUrl,
+      //   //   ),
+      //   //   fit: BoxFit.fill,
+      //   // ),
+      // ),
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(
-          image: CachedNetworkImageProvider(
-            imgUrl,
+        child: CachedNetworkImage(
+          placeholder: (context, url) => const Center(
+            child: CircularProgressIndicator(
+              color: redColor,
+            ),
           ),
-          fit: BoxFit.fill,
+          errorWidget: (context, url, error) => const Icon(
+            Icons.error,
+            color: greyColor,
+            size: 30,
+          ),
+          imageUrl: imgUrl,
+          fit: BoxFit.fitHeight,
         ),
       ),
-      // child: CachedNetworkImage(
-      //   placeholder: (context, url) => Center(
-      //     child: CircularProgressIndicator(
-      //       color: redColor,
-      //     ),
-      //   ),
-      //   errorWidget: (context, url, error) => const Icon(
-      //     Icons.error,
-      //     color: greyColor,
-      //     size: 30,
-      //   ),
-      //   imageUrl: imgUrl,
-      //   fit: BoxFit.cover,
-      // ),
     );
   }
 }

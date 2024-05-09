@@ -52,11 +52,12 @@ class OtpScreen extends StatelessWidget {
                   children: [
                     const Text("01:00"),
                     TextButton(
+                      style: TextButton.styleFrom(foregroundColor: redColor),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const RegistrationScreen(),
+                              builder: (context) =>  RegistrationScreen(),
                             ));
                       },
                       child: const Text(
