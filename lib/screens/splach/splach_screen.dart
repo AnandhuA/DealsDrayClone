@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:deals_dray_clone/colors/colors.dart';
 import 'package:deals_dray_clone/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplachScreen extends StatefulWidget {
   const SplachScreen({super.key});
@@ -15,11 +16,11 @@ class _SplachScreenState extends State<SplachScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) =>  LoginScreen(),
+            builder: (context) => LoginScreen(),
           ));
     });
   }
@@ -30,6 +31,12 @@ class _SplachScreenState extends State<SplachScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          Center(
+            child: Lottie.asset(
+                "assets/animations/Animation - 1715256846664.json",
+                width: 50,
+               ),
+          ),
           // Container(
           //   decoration: const BoxDecoration(
           //     image: DecorationImage(
